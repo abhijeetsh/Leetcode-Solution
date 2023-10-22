@@ -1,0 +1,23 @@
+class Solution {
+    public int thirdMax(int[] nums) {
+        int repeat = 0;
+        int count = 1;
+       Arrays.sort(nums);
+       int n = nums.length;
+       for(int i = n-1;i> 0;i--){
+           if(nums[i] == nums[i-1]){
+               repeat++;
+           }
+           else{
+               count++;
+               
+           }
+           if(count == 3){
+               return nums[n-repeat-count];
+           }
+
+       }
+       return nums[n-1];
+
+    }
+}
